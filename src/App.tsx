@@ -13,8 +13,13 @@ function App() {
     [2, 0, 1, 5],
   ])
 
-  // click on the card to flip it
+  // click on the card to flip it "hide the number"
+
   const [revealedGrid, setRevealedGrid] = useState(
+    // create a new array with the same length of the main array
+    // fill the new array with empty strings
+    // create a new array with the same length of the sub arrays
+    // fill the new array with false
     new Array(grid.length)
       .fill("")
       .map(() => new Array(grid[0].length).fill(false))
@@ -53,6 +58,8 @@ function App() {
         // ckeck if the numbers are the same, then show a window alert "you win"
         if (newRevealedGrid.every((row) => row.every((col) => col))) {
           alert("you win")
+          // reset the grid to hide the numbers again
+          setRevealedGrid(newRevealedGrid.map((row) => row.map(() => false)))
         }
       }
       // reset the previous click
